@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
-
+import Slider from 'react-slick';
+// class SimpleSlider extends React.Component {
+//   render() {
+//     var setting = {
+//       dots: true,
+//       infinite: true,
+//       speed: 500,
+//       slidesToShow: 1,
+//       slidersToScroll: 1
+//     };
+//     return (
+      
+//     )
+//   }
+// }
 class Home extends Component {
   render() {
+    var setting = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    }
     let loopHomes = [
       {
         descrip1: 'the ham is',
