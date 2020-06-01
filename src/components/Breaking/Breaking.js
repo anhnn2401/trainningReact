@@ -46,7 +46,8 @@ class Breaking extends Component {
         id: 7,
         image: require('../assets/images/img-1.jpg'),
         delay: '2s',
-        title: 'Amazing Image Post'
+        title_home: 'Amazing Image Post',
+        titleHome: 'Amazing Image Post'
       },
       {
         id: 8,

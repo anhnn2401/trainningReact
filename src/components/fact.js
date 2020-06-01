@@ -5,7 +5,7 @@ class Funfact extends Component {
     let loopPrices = [
       {
         title: 'Personal',
-        price: '99',
+        price: 99,
         hosting: '1 Hosting',
         email: '2 Email Marketing',
         database: '5 Database',
@@ -14,8 +14,7 @@ class Funfact extends Component {
         header: '5 Header Style',
         store: '3 Online Store',
         delay: '0.4s'
-      },
-      {
+      }, {
         title: 'Business',
         price: '199',
         hosting: '1 Hosting',
@@ -26,8 +25,7 @@ class Funfact extends Component {
         header: '5 Header Style',
         store: '3 Online Store',
         delay: '0.8s'
-      },
-      {
+      }, {
         title: 'Professional',
         price: '299',
         hosting: '1 Hosting',
@@ -37,9 +35,8 @@ class Funfact extends Component {
         website: '3 Website Layout',
         header: '5 Header Style',
         store: '3 Online Store',
-        delay: '1.2s'
-      },
-      {
+        delay: 1.2
+      }, {
         title: 'Diamond',
         price: '299',
         hosting: '1 Hosting',
@@ -49,13 +46,12 @@ class Funfact extends Component {
         website: '3 Website Layout',
         header: '5 Header Style',
         store: '3 Online Store',
-        delay: '1.6s'
+        delay: 1.6
       }
-      
-    ];
+    ]
     const price = loopPrices.map((loopPrice, index) => {
       return(
-        <div key= { index } className="col-md-3 col-sm-6 block-price wow fadeInLeft" data-wow-delay="@@delay">
+        <div key={ index } className="col-md-3 col-sm-6 block-price wow fadeInLeft" data-wow-delay={delay} width={100}>
           <h3 className="title-price">{ loopPrice.title }</h3>
           <p className="price">${ loopPrice.price }<span className="price-month">/Month</span></p>
           <p className="offer">offer</p>
@@ -74,7 +70,9 @@ class Funfact extends Component {
         </div>
 
       )
-    })
+    });
+    const a = 123;
+    const b = 123;
     
     let loopFacts = [
       {
@@ -82,20 +80,17 @@ class Funfact extends Component {
         linkImage: require('../assets/images/fact-1.png'),
         number: 4609,
         title: 'Works'
-      },
-      {
+      }, {
         delay: '0.8s',
         linkImage: require('../assets/images/fact-2.png'),
         number: 3470,
         title: 'Customers'
-      },
-      {
+      }, {
         delay: '1.2s',
         linkImage: require('../assets/images/fact-3.png'),
         number: 2908,
         title: 'Purchase'
-      },
-      {
+      }, {
         delay: '1.6s',
         linkImage: require('../assets/images/fact-4.png'),
         number: 1908,
@@ -135,7 +130,4 @@ class Funfact extends Component {
   }
 }
 
-
-
-
-export default Funfact;
+export default Funfact

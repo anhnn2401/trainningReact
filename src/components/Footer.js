@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
-    let loopRecents = [
+    const recents = [
       {
         image: require('../assets/images/img-footer.png'),
         titleRecent: 'A STANDARD IMAGE POST',
@@ -24,56 +24,27 @@ class Footer extends Component {
         delay: '1.2s'
       }
     ];
-    let loopImages = [
-      {
-        image: require('../assets/images/img-footer.png')
-      },
-      {
-        image: require('../assets/images/img-footer.png')
-      },
-      {
-        image: require('../assets/images/img-footer.png')
-      },
-      {
-        image: require('../assets/images/img-footer.png')
-      },
-      {
-        image: require('../assets/images/img-footer.png')
-      },
-      {
-        image: require('../assets/images/img-footer.png')
-      }
-    ];
-    let loopTags = [
-      {
-        delay: '1.8',
-      },
-      {
-        delay: '2.4',
-      },
-      {
-        delay: '2.8',
-      },
-      {
-        delay: '1.2',
-      }
-    ];
-    const imageFooter = loopImages.map((loopImage, index) => {
-      return (
-        <div key={ index } className="col-sm-5 col-3">
-          <img src= { loopImage.image } className="image-flicke" alt="anh-footer" />
-        </div>
-      )
-    })
-    const tags = loopTags.map((loopTag, index) => {
-      return (
-        <nav key={index} className="tags wow fadeInUp" data-wow-delay={ loopTag.delay }>
-          <a href="#s" className="tags-link">audio</a>
-          <a href="#s" className="tags-link">gallery</a>
-          <a href="#s" className="tags-link">Image</a>
-        </nav>
-      )
-    })
+    const images = [
+        require('../assets/images/img-footer.png'), 
+        require('../assets/images/img-footer.png'),
+        require('../assets/images/img-footer.png'),
+        require('../assets/images/img-footer.png'),
+        require('../assets/images/img-footer.png'),
+        require('../assets/images/img-footer.png')
+    ]
+    const delayValues = [1.8, 2.4, 2.8, 1.2];
+    const Images = images.map((image, index) => 
+      <div key={ index } className="col-sm-5 col-3">
+        <img src= { image } className="image-flicke" alt="anh-footer" />
+      </div>
+    )
+    const Tags = delayValues.map((delay, index) => 
+      <nav key={index} className="tags wow fadeInUp" data-wow-delay={ delay }>
+        <a href="#s" className="tags-link">audio</a>
+        <a href="#s" className="tags-link">gallery</a>
+        <a href="#s" className="tags-link">Image</a>
+      </nav>
+    )
     const recent = loopRecents.map((loopRecent, index) => {
       return (
         <div key= {index} className="recent wow fadeInUp" data-wow-delay={ loopRecent.delay }>
