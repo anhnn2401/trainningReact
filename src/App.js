@@ -1,38 +1,51 @@
 import './assets/styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'react-slick/dist/react-slick.js';
+import React from 'react';
 import { 
-  // React, 
   // Demo, 
   // Test, 
-  // Header, 
-  // Breaking, 
-  // Contact, 
-  // Company, 
-  // Fact, 
-  // Feature, 
-  // Feedback, 
-  // Footer, 
-  // Home, 
-  Product } from './components';
+  Header, 
+  Breaking, 
+  Contact, 
+  Company, 
+  Funfact, 
+  Feature, 
+  Footer, 
+  Home, 
+  Feedback,
+  Install,
+  Purchase,
+  Service,
+  Team,
+  Work } from './components';
+
 
 
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      <Product />
-      {/* <Home />
-      <Breaking />
-      <Feedback />
+      <Header />
+      <Home />
       <Feature />
-      <Fact />
-      <Contact />
       <Company />
+      <Work />
+      <Service />
+      <Install />
+      <Breaking />
+      <Funfact />
+      <Feedback />
+      <Team />
+      <Purchase />
+      <Contact />
+      <Footer />
+      {/* 
       <Demo />
       <Test />
-      <Footer /> */}
+       */}
     </>
   );
 }

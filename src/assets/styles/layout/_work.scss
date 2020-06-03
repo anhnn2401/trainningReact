@@ -68,4 +68,7 @@
       }
     }
   }
+  .filtr-Work {
+    @include flexbox();
+  }
 }

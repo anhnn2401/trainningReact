@@ -5,7 +5,7 @@ class Contact extends Component {
     return (
       <div className="contact row" id="contact">
         <div className="col-md-6">
-          <img src={ require('../assets/images/map.jpg') } alt="image-map" className="image-contact wow fadeInLeft" data-wow-delay="0.5s" />
+          <img src={ require('../../assets/images/map.jpg') } alt="anh-map" className="image-contact wow fadeInLeft" data-wow-delay="0.5s" />
         </div>
         <div className="col-md-6 wow fadeInRight" data-wow-delay="0.5s">
           <h3 className="title-feature">Keep In Touch</h3>

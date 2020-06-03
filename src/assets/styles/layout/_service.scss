@@ -2,46 +2,44 @@
   .wrap-service {
     .nav-service {
       @include flexbox();
-      @include justify-content(center);
-      .nav-service-link {
-        text-transform: capitalize !important;
-        .nav-link {
-          color: #717171;
-          border: 1px solid #e3e3e3;
-          text-align: center;
-          border-radius: unset;
-          padding: 20px 33px;
-          background-color: #f8fcfe;
-          font-weight: 700;
-          @include breakpoint(1199) {
-            padding: 18px;
-          }
-          @include breakpoint(991) {
-            display: block;
-            width: 33.3333%;
-          }
-          &:hover,
-          &:active {
-            color: #fff;
-            background-color: #18cfab;
-          }
+      // @include justify-content(space-between);
+      .react-tabs__tab {
+        border: 1px solid #e3e3e3;
+        border-radius: unset;
+        color: #717171;
+        padding: 20px 35px;
+        background-color: #f8fcfe;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: capitalize;
+        background-color: #f8fcfe;
+        @include breakpoint(1199) {
+          padding: 18px;
         }
-        .active {
+        @include breakpoint(991) {
+          display: block;
+          width: 33.3333%;
+        }
+        &:hover,
+        &:active {
           color: #fff;
           background-color: #18cfab;
-          position: relative;
-          display: inline-block;
-          border: 0;
-          &:after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -10px;
-            border-width: 10px;
-            border-style: solid;
-            border-color: #18cfab transparent transparent transparent;
-          }
+        }
+      }
+      .react-tabs__tab--selected {
+        color: #fff;
+        background-color: #18cfab;
+        position: relative;
+        display: inline-block;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: #18cfab transparent transparent transparent;
         }
       }
     }
