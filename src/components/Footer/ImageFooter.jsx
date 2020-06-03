@@ -13,7 +13,6 @@ class ImageFooter extends Component {
       <div>
         {Images}
       </div>
-
     )
   }
 }

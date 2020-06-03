@@ -13,8 +13,6 @@ import {Service} from './Service';
 import Team from './Team';
 import Work from './Work'
 
-
-
 export {
   Header,
   Home, 

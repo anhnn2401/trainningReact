@@ -16,7 +16,6 @@ export const TabProgress = () => (
         our skills
       </Tab> 
     </TabList>
-
     <TabPanel>
       <div className="tab-pane">
         <p className="interface-history progress">user interface</p>
@@ -44,7 +43,6 @@ export const TabProgress = () => (
         <p className="app-design-skill progress">app design</p>
       </div>
     </TabPanel>
-    
   </Tabs>
 );
 

@@ -67,10 +67,7 @@ export default class AsNavFor extends Component {
           className='slider-nav'
         >
           { NavSliders }
-
-
-        </Slider>
-        
+        </Slider>        
           <div className="button">
             <i className="fa fa-angle-left"  onClick={this.previous}></i>  
             <i className="fa fa-angle-right" onClick={this.next}></i>

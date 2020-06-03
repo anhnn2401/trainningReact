@@ -22,20 +22,17 @@ class Funfact extends Component {
             <a href="#aa" className="link-buy">buy now</a>
           </div>
         </div>
-
       )
-    });
-    
-    
+    });    
     const element = imageFacts.map((imageFact,index) => {
       return (
-            <div key={ index } className="col-lg-3 col-sm-6 option wow fadeInUp" data-wow-delay={ imageFact.delay}>
-              <div>
-                <a href="#aa"><img className="image-option" src={ imageFact.linkImage } alt="anh option"/></a>
-              </div>
-              <p className="number-fun">{ imageFact.number }</p>
-              <p className="title-option">{ imageFact.title }</p>
-            </div>
+        <div key={ index } className="col-lg-3 col-sm-6 option wow fadeInUp" data-wow-delay={ imageFact.delay}>
+          <div>
+            <a href="#aa"><img className="image-option" src={ imageFact.linkImage } alt="anh option"/></a>
+          </div>
+          <p className="number-fun">{ imageFact.number }</p>
+          <p className="title-option">{ imageFact.title }</p>
+        </div>
       )
     })
     return(

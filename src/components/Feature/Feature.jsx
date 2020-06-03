@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { loopOptions, loopFeatures } from '../__mock__/Data'
 class Feature extends Component {
   render() {
-    
     const feature = loopFeatures.map((loopFeature, index) => {
       return (
         <div key={ index } className="col-lg-4 col-sm-6 wow fadeInUp" data-wow-offset="20" data-wow-delay={ loopFeature.delay }>
@@ -12,10 +11,8 @@ class Feature extends Component {
           </div>
           <p className="description-feature">{ loopFeature.descFeature }</p>
         </div>
-      
       )
     })
-    
     const option = loopOptions.map((loopOption, index) => {
       return (
         <div key={ index } className="col-lg-3 col-sm-6 option wow fadeInUp" data-wow-offset="15" data-wow-delay={ loopOption.delay }>
@@ -24,7 +21,6 @@ class Feature extends Component {
           </div>
       <p className="title-option">{ loopOption.descOption}</p>
         </div>
-
       )
     })
     return (
@@ -39,9 +35,7 @@ class Feature extends Component {
           </div>
         </div>
       </div>
-
     );
-
   }
 }
 export default Feature;

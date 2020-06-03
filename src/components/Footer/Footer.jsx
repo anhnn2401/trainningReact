@@ -6,8 +6,7 @@ class Footer extends Component {
     return (
       <footer className="footer-container">
         <FooterTop />
-        <FooterBot />  
-          
+        <FooterBot />     
       </footer>
     )
   }

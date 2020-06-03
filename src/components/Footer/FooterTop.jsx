@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import RecentTop from './RecentTop';
 import TagFooterTop from './TagFooterTop';
 import ImageFooter from './ImageFooter';
-
-
-
 export default class FooterTop extends Component {
   render() {
     return(

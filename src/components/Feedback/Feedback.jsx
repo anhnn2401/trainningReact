@@ -27,7 +27,6 @@ export default class Feedback extends Component {
       nav2: this.slider2
     });
   }
-
   render() {
     const navFeedBacks = loopFeedbacks.map((item, index) => {
       return (
@@ -42,15 +41,13 @@ export default class Feedback extends Component {
     return (
       <div className="feedback" id="testimonial">
         <h3 className="title-feature wow fadeInRight">What People Say About theHam</h3>
-
         <Slider
           asNavFor={this.state.nav2}
           ref={slider => {this.slider1 = slider}}
           arrows= {false}
           adaptiveHeight= {true}
           slidesToShow={1}
-          slidesToScroll={1}
-          
+          slidesToScroll={1} 
         >
         { navFeedBacks }
         </Slider>
@@ -66,10 +63,7 @@ export default class Feedback extends Component {
           arrows={false}
           className='feedback-nav'
         >
-        {/* <div className="feedback-nav"> */}
           { forFeedBacks }
-        {/* </div> */}
-
         </Slider>
         
           <div className="button">

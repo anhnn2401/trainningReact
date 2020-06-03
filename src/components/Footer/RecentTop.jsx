@@ -7,13 +7,13 @@ export default class RecentTop extends Component {
     const RecentFooter = recentFooter.map((recent, index) => {
       return (
         <div key= {index} className="recent wow fadeInUp" data-wow-delay={ recent.delay }>
-            <img src={ recent.image } alt="anh" />
-            <div className="wrap-recent">
-              <a href="#a" className="title-recent">{ recent.titleRecent }</a>
-              <p className="desc-recent">{ recent.descRecent }</p>
-              <p className="date-recent">{ recent.date }</p>
-            </div>
+          <img src={ recent.image } alt="anh" />
+          <div className="wrap-recent">
+            <a href="#a" className="title-recent">{ recent.titleRecent }</a>
+            <p className="desc-recent">{ recent.descRecent }</p>
+            <p className="date-recent">{ recent.date }</p>
           </div>
+        </div>
       )
     })
     return(

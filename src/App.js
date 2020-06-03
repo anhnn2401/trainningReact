@@ -5,8 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'react-slick/dist/react-slick.js';
 import React from 'react';
 import { 
-  // Demo, 
-  // Test, 
   Header, 
   Breaking, 
   Contact, 
@@ -20,10 +18,8 @@ import {
   Purchase,
   Service,
   Team,
-  Work } from './components';
-
-
-
+  Work 
+} from './components';
 
 function App() {
   return (
@@ -42,10 +38,6 @@ function App() {
       <Purchase />
       <Contact />
       <Footer />
-      {/* 
-      <Demo />
-      <Test />
-       */}
     </>
   );
 }

@@ -18,5 +18,4 @@ export default class Breaking extends Component {
       </div>
     )
   }
-
 }
