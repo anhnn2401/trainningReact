@@ -1,16 +1,15 @@
-import Team from './Team'
 import React, { Component } from 'react';
+import Funfact from './Fact';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-export default Team;
-export class Teams extends Component {
+export default class Testimo extends Component {
   render() {
-    return (
+    return(
       <div>
         <Header />
-        <Team />
+        <Funfact/>
         <Footer />
       </div>
-    );
+    )
   }
 }

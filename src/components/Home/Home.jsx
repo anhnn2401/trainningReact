@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import { sliderFors, sliderNavs } from '../__mock__/products';
 import SliderNavs from './SliderNavs';
-import SliderFors from './SliderFors'
+import SliderFors from './SliderFors';
+// import {Switch, Router} from 'react-router-dom';
+import { Feature, Footer } from '../index.js'
+import Header from "../Header/Header";
 
 export default class AsNavFor extends Component {
   constructor(props) {
@@ -29,7 +32,7 @@ export default class AsNavFor extends Component {
   }
 
   render() {
-    
+ 
     const NavSliders = sliderNavs.map((item, index) => {
       return (
         <SliderNavs key={index} { ...item } />
@@ -42,37 +45,42 @@ export default class AsNavFor extends Component {
     })
    
     return (
-      <div className="home" id="home">
+      <div>
+        <Header />
+        <div className="home">
 
-        <Slider
-          asNavFor={this.state.nav2}
-          ref={slider => {this.slider1 = slider}}
-          arrows= {false}
-          adaptiveHeight= {true}
-          slidesToShow={1}
-          slidesToScroll={1}
-          
-        >
-        { ForSliders }
-        </Slider>
-        <Slider
-          // ref={c => (this.slider = c)}
-          asNavFor={this.state.nav1}
-          ref={c => {this.slider2 = c}}
-          slidesToShow={1}
-          swipeToSlide={true}
-          focusOnSelect={true}
-          dots={false}
-          arrows={false}
-          className='slider-nav'
-        >
-          { NavSliders }
-        </Slider>        
-          <div className="button">
-            <i className="fa fa-angle-left"  onClick={this.previous}></i>  
-            <i className="fa fa-angle-right" onClick={this.next}></i>
-          </div>
+          <Slider
+            asNavFor={this.state.nav2}
+            ref={slider => {this.slider1 = slider}}
+            arrows= {false}
+            adaptiveHeight= {true}
+            slidesToShow={1}
+            slidesToScroll={1}
+            
+          >
+          { ForSliders }
+          </Slider>
+          <Slider
+            asNavFor={this.state.nav1}
+            ref={c => {this.slider2 = c}}
+            slidesToShow={1}
+            swipeToSlide={true}
+            focusOnSelect={true}
+            dots={false}
+            arrows={false}
+            className='slider-nav'
+          >
+            { NavSliders }
+          </Slider>        
+            <div className="button">
+              <i className="fa fa-angle-left"  onClick={this.previous}></i>  
+              <i className="fa fa-angle-right" onClick={this.next}></i>
+            </div>
+        </div>
+        <Feature />
+        <Footer/>
       </div>
     );
   }
 }
+

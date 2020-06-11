@@ -2,30 +2,44 @@
 import Home from './Home/Home';
 import Breaking from './Breaking/Breaking';
 import Company from './Company/Company';
-import Contact from './Contact/Contact.jsx';
 import Funfact from './Funfact/Fact';
 import Feature from './Feature/Feature';
-import Footer from './Footer/Footer.jsx';
+import Footer from './Footer/Footer';
 import Feedback from './Feedback/Feedback';
 import Header from './Header/Header.jsx';
 import {Install, Purchase } from './Purchase';
 import {Service} from './Service';
 import Team from './Team';
-import Work from './Work'
+import Works from './Work';
+import About from './Company';
+import NotFound from './NotMatch/NotFound';
+import Skills from './Purchase';
+import Services from './Service';
+import Testimo from './Funfact';
+import Blog from './Feedback';
+import {Teams} from './Team';
+import { Contact } from './Contact';
+import Message from './Message';
 
 export {
   Header,
-  Home, 
+  Message,
+  Home,
+  Blog,
+  About, 
   Breaking,
   Feature,
   Company,
   Contact,
   Funfact,
   Feedback,
+  Testimo,
   Footer,
   Install,
   Purchase,
-  Service,
-  Team,
-  Work 
+  Service, Services,
+  Team,Teams,
+  Works,
+  NotFound, 
+  Skills,
 };
