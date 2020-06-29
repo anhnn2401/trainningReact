@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Search from './Search';
-import {massagers} from '../__mock__/Data';
+import { messenges } from '../../store/test/messenges';
 import { Link } from 'react-router-dom';
 
 export default class Content extends Component {
@@ -10,13 +10,13 @@ export default class Content extends Component {
     this.state = {
       value: null
     };
-    console.log(this.state)
   }
   
   render() {
+    console.log(messenges);
     let {match} = this.props;
     let id = match.params.id;
-    let item = massagers.find(item => item.id === id )
+    let item = messenges.find(item => item.id === id )
     return (
       <div>
         <Header/>
@@ -36,6 +36,7 @@ export default class Content extends Component {
               <p className="aaaa">{item.messager}</p>
               <p className="send">{item.messager1}</p>
               <p className="aaaa">{item.messager2}</p>
+              {/* <p className="send">{item.content}</p> */}
             </div>
           </div>
           {/* <div>

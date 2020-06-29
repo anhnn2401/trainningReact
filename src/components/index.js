@@ -19,11 +19,12 @@ import Testimo from './Funfact';
 import Blog from './Feedback';
 import {Teams} from './Team';
 import { Contact } from './Contact';
-import Message from './Message';
-
+import Messenger from './Messenger';
+import Main from './main';
+import ClubMeeting from './ClubMeeting/';
 export {
   Header,
-  Message,
+  Messenger,
   Home,
   Blog,
   About, 
@@ -42,4 +43,6 @@ export {
   Works,
   NotFound, 
   Skills,
+  Main,
+  ClubMeeting
 };

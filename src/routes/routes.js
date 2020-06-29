@@ -9,9 +9,9 @@ import {
   Testimo,
   Blog,
   Teams,
-  Message
+  Messenger
 } from '../components';
-import Content from '../components/Message/Content';
+import Content from '../components/Messenger/Content';
 
 
 export const routes = [
@@ -24,7 +24,7 @@ export const routes = [
   {path: '/blog', component: Blog},
   {path: '/team', component: Teams},
   {path: '/contact', component: Contact},
-  {path: '/message', component: Message},
-  {path: '/message/:id', component: Content},
+  {path: '/messenges', component: Messenger},
+  {path: '/messenges/:id', component: Content},
   {component: NotFound},
 ]

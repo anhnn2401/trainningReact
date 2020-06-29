@@ -10,11 +10,14 @@
     .image-company {
       width: 100%;
       position: absolute;
-      bottom: 0;
-      padding-right: 60px;
+      bottom: 10%;
+      padding-right: 15px;
       @include breakpoint(991) {
         position: relative;
         margin: 0;
+        padding-left: 15px;
+        padding-right: 0;
+        padding-top: 160px;
       }
     }
     .title-feature {
@@ -65,6 +68,9 @@
     }
   }
   .nav {
+    @include breakpoint(991) {
+      @include justify-content(center);
+    }
     .nav-item {
       color: #18cfab;
       background-color: transparent;

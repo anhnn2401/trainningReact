@@ -319,38 +319,4 @@ export const descTeams = [
   delay: 1.6
   }
 ];
-export const massagers = [
-  {
-    name: 'Nguyễn Văn A',
-    id: 'nguyenvana',
-    image: require('../../assets/images/img-1.jpg'),
-    description: 'day la noi dung tin nhan 1',
-    messager: 'Chào A',
-    messager2: 'em làm 1 trang detail có url dạng: /message/1, trong trang detail em lấy id được truyền vào từ this.props.match.params.id sau đó lấy data messages của em find item có id === this.props.match.params.id => nếu có thì hiển thị chi tiết ra',
-    messager1: 'a ơi làm sao để khi click vào từng phần thì nó cho kết quả ra là nội dung tin nhắn của phần đó vậy a'
-  },{
-    name: 'Nguyễn Văn B',
-    id: 'nguyenvanb',
-    image: require('../../assets/images/img-2.jpg'),
-    description: 'day la noi dung tin nhan 2',
-    messager: 'Chào B',
-    messager2: 'day la noi dung tin nhan 2. em làm 1 trang detail có url dạng: /message/1, trong trang detail em lấy id được truyền vào từ this.props.match.params.id sau đó lấy data messages của em find item có id === this.props.match.params.id => nếu có thì hiển thị chi tiết ra',
-    messager1: 'a ơi làm sao để khi click vào từng phần thì nó cho kết quả ra là nội dung tin nhắn của phần đó vậy a'
-  },{
-    name: 'Nguyễn văn C',
-    id: 'nguyenvanc',
-    image: require('../../assets/images/img-3.jpg'),
-    description: 'day la noi dung tin nhan 3',
-    messager: 'Chào C',
-    messager2: 'day la noi dung tin nhan 3 . em làm 1 trang detail có url dạng: /message/1, trong trang detail em lấy id được truyền vào từ this.props.match.params.id sau đó lấy data messages của em find item có id === this.props.match.params.id => nếu có thì hiển thị chi tiết ra',
-    messager1: 'a ơi làm sao để khi click vào từng phần thì nó cho kết quả ra là nội dung tin nhắn của phần đó vậy a'
-  },{
-    name: 'Nguyễn văn D',
-    id: 'nguyenvand',
-    image: require('../../assets/images/img-4.jpg'),
-    description: 'day la noi dung tin nhan 4',
-    messager: 'Chào D',
-    messager2: 'day la noi dung tin nhan 3. em làm 1 trang detail có url dạng: /message/1, trong trang detail em lấy id được truyền vào từ this.props.match.params.id sau đó lấy data messages của em find item có id === this.props.match.params.id => nếu có thì hiển thị chi tiết ra',
-    messager1: 'a ơi làm sao để khi click vào từng phần thì nó cho kết quả ra là nội dung tin nhắn của phần đó vậy a'
-  },
-];
+

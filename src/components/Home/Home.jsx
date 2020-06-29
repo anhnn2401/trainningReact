@@ -55,8 +55,7 @@ export default class AsNavFor extends Component {
             arrows= {false}
             adaptiveHeight= {true}
             slidesToShow={1}
-            slidesToScroll={1}
-            
+            slidesToScroll={1}            
           >
           { ForSliders }
           </Slider>

@@ -91,4 +91,11 @@
 .row {
   width: 100%;
   margin: 0;
+  padding: 0;
+}
+.feature {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

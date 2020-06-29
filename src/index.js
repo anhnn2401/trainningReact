@@ -7,23 +7,25 @@ import App from './App';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 // Store
-import { createStore } from 'redux';
-import myReducer from './reducers/index';
+// import { createStore } from 'redux';
+// import myReducer from './reducers/index';
 import { Provider } from 'react-redux';
+// import TestAnt from './testAnt';
+import { Main } from './components';
+import { store } from './store';
+// import demo from './training/demo'
 
-const store = createStore(myReducer);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = { store }>
       <App />
+      {/* <TestAnt /> */}
+      <Main />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
  
