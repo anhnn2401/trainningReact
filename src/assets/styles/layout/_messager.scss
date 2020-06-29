@@ -1,0 +1,120 @@
+.pdt-50 {
+  background-color: #f5f5f5;
+  .link-messager {
+    @include flexbox();
+    padding: 20px;
+
+    .messager-img {
+      width: 100px;
+      border-radius: 100%;
+    }
+    .content-messager {
+      padding-left: 20px;
+      font-size: 20px;
+      color: #717171;
+      border: 1px solid #f5f5f5;
+      &:hover,
+      &:active {
+        color: #18b;
+      }
+      .massager-title {
+        font-size: 30px;
+      }
+    }
+  }
+}
+.desc-messager {
+  width: 100%;
+  .title-messager {
+    @include flexbox();
+    // @include justify-content (space-around);
+    align-items: center;
+    .btn-back {
+      position: absolute;
+      left: 3%;
+      font-size: 50px;
+      border: none;
+      background-color: transparent;
+    }
+    .messager-img {
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+      margin: 0 30px;
+    }
+    .name-massager {
+      font-size: 45px;
+    }
+  }
+  .content-messager {
+    margin-top: 40px;
+    font-size: 30px;
+    .send {
+      width: 90%;
+      display: block;
+      float: right;
+      border-radius: 20px;
+      background-color: #0096d3;
+      padding: 20px;
+    }
+    .aaaa {
+      background-color: #bdbdbd;
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      display: block;
+      float: left;
+    }
+  }
+}
+.buttonControl {
+  @include flexbox();
+}
+.search {
+  @include flexbox();
+  @include justify-content(center);
+  padding: 100px 0 20px 20px;
+    .form-control {
+      width: 50%;
+      height: 50px;
+      border-radius: 25px;
+      padding-left: 30px;
+    }
+    .fa-search {
+      font-size: 30px;
+    }
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.list-messager {
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+  .btn {
+    display: block;
+  }
+}
+.panel-heading {
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  padding: 20px;
+  .panel-title {
+    margin: 0;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  .form-messager {
+    resize: none;
+  }
+}
+
+.btn-cancel {
+  float: right;
+  margin-top: 2px;
+  color: #bd2130;
+}
+.hidden {
+  display: none;
+}

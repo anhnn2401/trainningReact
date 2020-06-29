@@ -1,0 +1,16 @@
+import Team from './Team'
+import React, { Component } from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+export default Team;
+export class Teams extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Team />
+        <Footer />
+      </div>
+    );
+  }
+}

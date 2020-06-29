@@ -1,0 +1,47 @@
+// ----------------------------------------------------------------------
+// Font
+// ----------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=vietnamese');
+
+// ----------------------------------------------------------------------
+// Base
+// ----------------------------------------------------------------------
+@import "base/mixins";
+@import "base/variables";
+@import "base/extends";
+@import "base/reset";
+@import "base/fonts";
+@import "base/utility";
+@import "base/button";
+
+// ----------------------------------------------------------------------
+// Layout
+// ----------------------------------------------------------------------
+@import "layout/header";
+@import "layout/footer";
+@import "layout/home";
+@import "layout/feature";
+@import "layout/company";
+@import "layout/work";
+@import "layout/service";
+@import "layout/purchase";
+@import "layout/breaking";
+@import "layout/fact.scss";
+@import "layout/feedback.scss";
+@import "layout/contact.scss";
+@import "layout/team.scss";
+@import "layout/messager.scss";
+// ----------------------------------------------------------------------
+// Custom
+// ----------------------------------------------------------------------
+@import "custom/custom-plugin";
+
+// ----------------------------------------------------------------------
+// Pages
+// ----------------------------------------------------------------------
+@import "pages/homepage";
+
+// ----------------------------------------------------------------------
+// Responsive
+// ----------------------------------------------------------------------
+@import "responsive/responsive";

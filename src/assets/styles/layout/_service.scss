@@ -1,0 +1,67 @@
+.service {
+  .wrap-service {
+    .nav-service {
+      @include flexbox();
+      // @include justify-content(space-between);
+      .react-tabs__tab {
+        border: 1px solid #e3e3e3;
+        border-radius: unset;
+        color: #717171;
+        padding: 20px 35px;
+        background-color: #f8fcfe;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: capitalize;
+        background-color: #f8fcfe;
+        @include breakpoint(1199) {
+          padding: 18px;
+        }
+        @include breakpoint(991) {
+          display: block;
+          width: 33.3333%;
+        }
+        &:hover,
+        &:active {
+          color: #fff;
+          background-color: #18cfab;
+        }
+      }
+      .react-tabs__tab--selected {
+        color: #fff;
+        background-color: #18cfab;
+        position: relative;
+        display: inline-block;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: #18cfab transparent transparent transparent;
+        }
+      }
+    }
+    .tab-content {
+      .active {
+        @include flexbox();
+          align-items: center;
+          color: #777777;
+        @include breakpoint(575) {
+          display: block;
+          .img-service {
+            width: 100% !important;
+            margin-bottom: 20px;
+            margin-right: 0 !important;
+          }
+        }
+        .img-service {
+          width: 200px;
+          height: 140px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
