@@ -13,9 +13,9 @@ class Messenges extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messenges: JSON.parse(localStorage.getItem('contentMessenges')) || [],
-      isDisplayForm: true,
-      formEditing: null,
+      // messenges: JSON.parse(localStorage.getItem('contentMessenges')) || [],
+      // isDisplayForm: true,
+      // formEditing: null,
       filter: {
         name: '',
         status: -1
@@ -23,91 +23,102 @@ class Messenges extends Component {
       sortBy: 'name',
       sortValue : 1,
     }
-    console.log('log messs',this.state.messenges);
-    console.log('this.props', this.props);
   }
   
   componentDidMount() {
-    console.log('didmount', this.props)
     this.props.dispatch(actions.listAll())
+    console.log('this.state-Messenger',this.props);
+
   }
 
   componentDidUpdate() {
-    console.log('new', this.props)
   }
 	
-  onFilter = ( filterName ) => {
-    this.setState ({
-      filter : {
-        name: filterName.toLowerCase()
-      }
-    })
-    // filterName.preventDefault()
-  }
+  // onFilter = ( filterName ) => {
+  //   this.setState ({
+  //     filter : {
+  //       name: filterName.toLowerCase()
+  //     }
+  //   })
+  //   // filterName.preventDefault()
+  // }
 
-  handleMessegeSubmit = (data) => {
-    console.log('submit',data)
-    let storeMess = this.state.messenges;
-    const index = this.state.messenges.findIndex(item => item.id === data.id);
-    console.log('index', index)
-    if (index === -1) {
-      storeMess.push(data);
-      }else {
-        storeMess[index] = data;
-      }
-    this.setState({
-      messenges: storeMess    
-    });
-    localStorage.setItem('contentMessenges', JSON.stringify(storeMess));
 
-  }
+
+//chuwcs nang do FormAdd thuc hienj
+  // handleMessegeSubmit = (data) => {
+
+  //   let storeMess = this.props.messenges;
+  //   const index = storeMess.findIndex(item => item.id === data.id);
+  //   if (index === -1) {
+  //     storeMess.push(data);
+  //     }else {
+  //       storeMess[index] = data;
+  //     }
+  //   this.setState({
+  //     messenges: storeMess    
+  //   });
+  //   localStorage.setItem('contentMessenges', JSON.stringify(storeMess));
+
+  // }
     
-  onCloseForm = () => {
-    this.setState({
-      isDisplayForm : true
-    });
-  }
+  // onCloseForm = () => {
+  //   this.props.onCloseForm();
+  //   this.setState({
+  //     isDisplayForm : true
+  //   });
+  // }
 
   onToggleForm = () => {
-    this.setState({
-      isDisplayForm : !this.state.isDisplayForm
-    })
+    this.props.onToggleForm();
+    // this.setState({
+    //   isDisplayForm : !this.props.isDisplayForm
+    // })
   }
   onDelete = (id) => {
-		const { messenges } = this.state;
-		const newData = messenges && messenges.filter(item => item.id !== id);
-    this.setState ({
-			messenges: newData,
-		});
-    localStorage.setItem('contentMessenges', JSON.stringify(newData));
-  }
-  onOpenForm = () => {
-    this.setState({
-      isDisplayForm : false
-    });
-    // this.onToggleForm()
-  }
+    this.props.onDelete(id);
+    this.props.onCloseForm();
 
-  findIndex = (id) => {
-    var { messenges } = this.state;
-    var result = -1;
-    messenges.forEach((message, index) => {
-      if (message.id === id) {
-        result = index;
-      }
-    });
-    return result;
   }
-  onEdit = (id) => {
-    const { messenges } = this.state;
-    const index = this.findIndex(id);
-    const formEditing = messenges[index];
-    this.setState({
-      formEditing: formEditing
-    }, () => {this.onOpenForm();}) ;
+  // onDelete = (id) => {
+	// 	const { messenges } = this.state;
+	// 	const newData = messenges && messenges.filter(item => item.id !== id);
+  //   this.setState ({
+	// 		messenges: newData,
+	// 	});
+  //   localStorage.setItem('contentMessenges', JSON.stringify(newData));
+  // }
+  // onOpenForm = () => {
+  //   this.setState({
+  //     isDisplayForm : false
+  //   });
+  //   // this.onToggleForm()
+  // }
+
+  // findIndex = (id) => {
+  //   var { messenges } = this.props;
+  //   var result = -1;
+  //   messenges.forEach((message, index) => {
+  //     if (message.id === id) {
+  //       result = index;
+  //     }
+  //   });
+  //   return result;
+  // }
+  onEdit = (messege) => {
+    this.props.onOpenForm();
+    this.props.onEdit(messege);
+    console.log('!!!__messenger__!!!!',messege);
   }
+  // onEdit = (id) => {
+  //   const { messenges } = this.props;
+  //   const index = this.findIndex(id);
+  //   const formEditing = messenges[index];
+  //   this.setState({
+  //     formEditing: formEditing
+  //   }, () => {this.onOpenForm();}) ;
+  // }
   onSort=(sortBy, sortValue) => {
-    console.log('sort',sortBy, sortValue);
     this.setState ({
       sortBy : sortBy,
       sortValue : sortValue
@@ -115,16 +126,15 @@ class Messenges extends Component {
   }
 
   render() {
-    const {match, } = this.props;
-    console.log("this.props",this.props);
-    console.log("this.state",this.state);
+    const {match, messenges, isDisplayForm  } = this.props;
 
     const { filter,
-            isDisplayForm, 
-            formEditing, 
+            // isDisplayForm, 
+            // formEditing, 
             sortValue,
-            messenges } = this.state ;
-            messenges.sort((a,b) => {
+            // messenges,
+           } = this.state ;
+      messenges.sort((a,b) => {
       if (a.name.toUpperCase() > b.name.toUpperCase()) {
         return sortValue;
       } else if (a.name.toUpperCase() < b.name.toUpperCase()) {
@@ -156,7 +166,8 @@ class Messenges extends Component {
             <button
               type="button"
               className="btn btn-primary"
-              onClick = { () => this.onEdit(messege.id)}
+              // onClick = { () => this.onEdit(messege.id)}
+              onClick = {() => this.onEdit(messege)}
               ><i className="fa fa-pencil"/> Sửa
             </button>
             <button
@@ -170,6 +181,7 @@ class Messenges extends Component {
         </li>
       )
     })
+    // console.log('isDisplayForm',isDisplayForm.isDisplayForm)
     return (
       <div className="messager">
         <Header/>
@@ -178,16 +190,17 @@ class Messenges extends Component {
         />
         <div className="container">
           <FormAdd 
-            onAddNewMessage={(name, content, id) => this.handleMessegeSubmit(name, content, id)} 
+            // onAddNewMessage={(name, content, id) => this.handleMessegeSubmit(name, content, id)} 
             hidden={isDisplayForm}
-            onCloseForm={this.onCloseForm}
-            update={formEditing}
+            // onCloseForm={this.onCloseForm}
+            // update={formEditing}
           />
 
         </div>
         <div className="container buttonControl">
           <button 
-          className={isDisplayForm ? "btn btn-primary" : "hidden"}
+          // className={isDisplayForm ? "btn btn-primary" : "hidden"}
+          className="btn btn-primary"
           onClick = {this.onToggleForm}
           >
             <i className="fa fa-plus" aria-hidden="true"/> { isDisplayForm ? "Thêm tin nhan" : "Đóng"}
@@ -207,12 +220,34 @@ class Messenges extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log('aaaastate',state);
+  console.log(state);
   return { 
-    messenges : state.messages.data
-   }
+    messenges : state.messages,
+    isDisplayForm : state.isDisplayForm.isDisplayForm
+  }
 }
 
-const mapDispatchToProps = (dispatch) => ({dispatch})
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    dispatch : () => {},
+    onToggleForm : () => {
+      dispatch(actions.toggleForm())
+    },
+    onEdit : (messenge) => {
+      dispatch(actions.editMessenge(messenge))
+      console.log('edit_MEss',messenge);
+    },
+    onCloseForm : () => {
+      dispatch(actions.closeForm())
+    },
+    onOpenForm : () => {
+      dispatch(actions.openForm())
+    },
+    onDelete : (id) => {
+      dispatch(actions.deleteMessenge(id))
+      console.log('delete',id);
+    }
+  };
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Messenges)

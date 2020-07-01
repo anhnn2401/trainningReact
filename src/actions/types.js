@@ -1,4 +1,10 @@
 export const INCREASE = 'increase';
 export const DECREASE = 'decrease';
 export const RECEIVE_DATA = 'RECEIVE_DATA';
-export const ADD_MESSENGE = 'ADD_MESSENGE'
+export const TOGGLE_FORM = 'TOGGLE_FORM';
+export const CLOSE_FORM = 'CLOSE_FORM';
+export const OPEN_FORM = 'OPEN_FORM';
+export const SAVE_FORM = 'SAVE_FORM';
+export const ADD_MESSENGE = 'ADD_MESSENGE';
+export const EDIT_MESSENGE = 'EDIT_MESSENGE';
+export const DELETE_MESSENGE = 'DELETE_MESSENGE';

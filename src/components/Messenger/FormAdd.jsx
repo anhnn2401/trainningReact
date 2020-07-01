@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import { messagers } from '../../store/test/messager';
-export default class FormAdd extends Component {
+import { connect } from 'react-redux';
+import * as actions from './../../actions/test/messager'
+class FormAdd extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +13,7 @@ export default class FormAdd extends Component {
   }
   componentDidMount() {
     // console.log('didmount');
-    // console.log('props',this.props);
+    console.log('props',this.props);
   }
   
   clearData = () => {
@@ -21,10 +23,10 @@ export default class FormAdd extends Component {
     })
   }
 
-  generateID() {
-    let id = Math.random().toString(36).substring(2,8);
-    return id;
-  }
+  // generateID() {
+  //   let id = Math.random().toString(36).substring(2,8);
+  //   return id;
+  // }
   onChange = (event) => {
     const value = event.target.value
     const name = event.target.name
@@ -37,17 +39,21 @@ export default class FormAdd extends Component {
     this.props.onCloseForm();
   }
 
-  onEdit = () => {
-    this.props.onEdit();
+  onEdit = (messenge) => {
+    this.props.onEdit(messenge);
+  }
+
+  onToggleForm = () => {
+    console.log('object',this.props);
   }
 
   componentDidUpdate(prevProps, prevState) {
     // console.log('prevPropsFormadd',prevProps);
-    if(prevProps.update !== this.props.update) {
+    if(prevProps.formEditing !== this.props.formEditing) {
       this.setState({
-        id : this.props.update.id,
-        name : this.props.update.name,
-        content : this.props.update.content,
+        id : this.props.formEditing.id,
+        name : this.props.formEditing.name,
+        content : this.props.formEditing.content,
       });
     }
   }
@@ -55,20 +61,23 @@ export default class FormAdd extends Component {
   onSendMessager = (event) => {
     event.preventDefault();
     // const {  } = this.state;
-    const params = {
-      content: this.state.content, 
-      name: this.state.name,
-      id: this.state.id || this.generateID()
-    }
-    console.log("params",params);
-    this.props.onAddNewMessage(params);
+    this.props.onSaveForm(this.state)
+    // this.props.onAddNewMessenge(this.state)
+    // const params = {
+    //   content: this.state.content, 
+    //   name: this.state.name,
+    //   id: this.state.id || this.generateID()
+    // }
+    // console.log("params",params);
+    // this.props.onAddNewMessage(params);
     this.clearData();
     this.onCloseForm();
   }
-
   render() {
+    // if(!this.props.isDisplayForm) return null;
     return (
       <div hidden={this.props.hidden}>
+      {/* <div hidden={this.props.hidden}> */}
         <div className="panel-heading">
           <h3 className="panel-title">
             Tin nhắn mới
@@ -116,3 +125,32 @@ export default class FormAdd extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  // console.log('state-FormAdd',state);
+  return {
+    formEditing : state.formEditing
+  }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    // onAddNewMessenge : (messenge) => {
+    //   dispatch(actions.addMessenge(messenge))
+    // },
+    onSaveForm : (messenge) => {
+      dispatch(actions.saveForm(messenge))
+    },
+    onCloseForm : () => {
+      dispatch(actions.closeForm())
+    },
+    onToggleForm : () => {
+      dispatch(actions.toggleForm())
+    },
+    onEdit : (messenge) => {
+      dispatch(actions.editMessenge(messenge))
+      // console.log('edit-messs',messenge);
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (FormAdd);
